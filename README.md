@@ -1,6 +1,7 @@
 # Карусель на slick для PhpShop
 
-1. Скопировать директорию slidercarousel в phpshop\admpanel И директорию из папки templates в phpshop\templates\ВАША_ТЕМА\
+1. Скопировать директорию slidercarousel в phpshop\admpanel 
+Скопировать директорию из папки templates в phpshop\templates\ВАША_ТЕМА\
 
 2. Добавить строку в domains\sta\phpshop\admpanel\admin.php для того что бы пункт появился в меню
 ```html
@@ -53,7 +54,7 @@ https://github.com/kenwheeler/slick
 
 11. Укажите в шаблоне @imageSlider2@ в том месте где должна быть карусель
 
-12. phpshop\inc\elements.inc.php
+12. Добавить код в phpshop\inc\elements.inc.php
 ```php
 /**
  * ZEA
