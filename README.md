@@ -3,18 +3,27 @@
 1. Скопировать директорию slidercarousel в phpshop\admpanel И директорию из папки templates в phpshop\templates\ВАША_ТЕМА\
 
 2. Добавить строку в domains\sta\phpshop\admpanel\admin.php для того что бы пункт появился в меню
+```html
 <li><a href="?path=slidercarousel"><span>Слайдер - Carousel</span><span class="dropdown-header">Рекламный слайдер на главной странице</span></a></li>
+```
 
 3. Добавить строку в phpshop\admpanel\exchange\admin_sql.php 
+```php
 "phpshop_slidercarousel" => 'Слайдер на главной странице'
+```
 
 4. Добавить строки в phpshop\admpanel\users\adm_usersID.php поместить лучше около стандартной карусели
-"slidercarousel" => rules_zero($_POST[slidercarousel_rul_1]) . "-" . rules_zero($_POST[slidercarousel_rul_2]) . "-" . rules_zero($_POST[slidercarousel_rul_3]),//ZEA
+```php
+"slidercarousel" => rules_zero($_POST[slidercarousel_rul_1]) . "-" . rules_zero($_POST[slidercarousel_rul_2]) . "-" . rules_zero($_POST[slidercarousel_rul_3]),
+```
 
 5. В phpshop\admpanel\users\adm_users_new.php
-"slidercarousel" => rules_zero($_POST[slidercarousel_rul_1]) . "-" . rules_zero($_POST[slidercarousel_rul_2]) . "-" . rules_zero($_POST[slidercarousel_rul_3]),// ZEA
+```php
+"slidercarousel" => rules_zero($_POST[slidercarousel_rul_1]) . "-" . rules_zero($_POST[slidercarousel_rul_2]) . "-" . rules_zero($_POST[slidercarousel_rul_3]),
+```
 
 6. В phpshop\admpanel\users\gui\tab_rules.gui.php
+```php
 <tr>
 <td>СлайдерCarousel</td>
 <td>' . $PHPShopGUI->setCheckbox('slidercarousel_rul_1', 1, false, rules_checked($status[slidercarousel], 0)) . '</td>
@@ -23,14 +32,19 @@
 <td>-</td>
 <td>-</td>
 </tr>
+```
 
 7. В phpshop\inc\autoload.inc.php
+```php
 // ZEA Слайдер - Карусель
 $PHPShopSlidercarouselElement = new PHPShopSlidercarouselElement();
 $PHPShopSlidercarouselElement->init('imageSlider2');
+```
 
 8. phpshop\inc\config.ini 
+```php
 slidercarousel = "phpshop_slidercarousel";
+```
 
 9. Создать таблицу в БД phpshop_slidercarousel. Полная копия стандартной таблицы slider
 
@@ -40,6 +54,7 @@ https://github.com/kenwheeler/slick
 11. Укажите в шаблоне @imageSlider2@ в том месте где должна быть карусель
 
 12. phpshop\inc\elements.inc.php
+```php
 /**
  * ZEA
  * Элемент вывода изображений в слайдер
@@ -134,6 +149,6 @@ class PHPShopSlidercarouselElement extends PHPShopElements {
             return false;
         }
     }
-
 }
+```
 
