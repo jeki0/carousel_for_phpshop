@@ -109,7 +109,7 @@ class PHPShopSlidercarouselElement extends PHPShopElements {
         if (!empty($view)) {
             $result = $this->PHPShopOrm->select(array('image', 'alt', 'link'), array('enabled' => '="1"'), array('order' => 'num, id DESC'), array("limit" => $this->limit));
 
-            // Проверка на еденичню запись
+            // Проверка на еденичную запись
             if ($this->limit > 1)
                 $data = $result;
             else
